@@ -1,0 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
