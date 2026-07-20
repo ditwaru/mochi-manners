@@ -206,10 +206,15 @@
 .hero-visual {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-logo {
   width: min(22rem, 90vw);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  flex-shrink: 0;
   filter: drop-shadow(0 12px 40px rgba(147, 51, 234, 0.25));
 }
 

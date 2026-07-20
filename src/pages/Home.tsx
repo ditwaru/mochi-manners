@@ -93,7 +93,7 @@ export default function Home() {
               src={logoGradient}
               alt="Mochi Manners logo"
               width={480}
-              height={479}
+              height={480}
               fetchPriority="high"
             />
           </div>
