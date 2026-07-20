@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, type MouseEvent } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import logoWordmark from "../assets/logo-wordmark.png";
 import { ActiveSectionProvider, useActiveSection } from "../context/ActiveSectionContext";
+import { site } from "../site";
 
 const homeSections = ["services", "about", "contact"] as const;
 
 function LayoutInner() {
   const location = useLocation();
-  const { activeSection } = useActiveSection();
+  const { activeSection, setActiveSection } = useActiveSection();
   const onHome = location.pathname === "/";
 
   useEffect(() => {
@@ -17,11 +18,33 @@ function LayoutInner() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   }, [location.hash, onHome]);
 
+  useEffect(() => {
+    if (!onHome) setActiveSection(null);
+  }, [onHome, setActiveSection]);
+
+  const handleLogoClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!onHome) return;
+    e.preventDefault();
+    if (location.hash) {
+      window.history.replaceState(null, "", "/");
+    }
+    setActiveSection(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div id="top" className="page">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <header className="header">
         <div className="container header-inner">
-          <Link to="/" className="logo" aria-label="Mochi Manners home">
+          <Link
+            to="/"
+            className="logo"
+            aria-label="Mochi Manners home"
+            onClick={handleLogoClick}
+          >
             <img className="brand-wordmark" src={logoWordmark} alt="Mochi Manners" />
           </Link>
           <nav className="nav" aria-label="Main">
@@ -52,7 +75,10 @@ function LayoutInner() {
         <div className="container footer-inner">
           <img className="footer-logo brand-wordmark" src={logoWordmark} alt="" />
           <span>© {new Date().getFullYear()} Mochi Manners</span>
-          <a href="mailto:info@mochimanners.com">info@mochimanners.com</a>
+          <nav className="footer-nav" aria-label="Footer">
+            <Link to="/gallery">Gallery</Link>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </nav>
         </div>
       </footer>
     </div>

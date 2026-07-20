@@ -57,6 +57,6 @@ Uploaded files in `gallery-upload/` are gitignored; only the manifest in `src/da
 ### Before going live
 
 - Confirm `info@mochimanners.com` is set up and receiving mail.
-- After deploying, test social link previews (iMessage, Slack, etc.) — update `og:image` in `index.html` to your full production URL if previews don't pick up the image.
+- Test social link previews (iMessage, Slack, etc.) after deploy — OG tags point to `https://mochimanners.com/og-image.png`.
 - Review copy in `src/pages/Home.tsx` (services, about points) for accuracy.
 - Visit `/gallery` after upload to confirm images and videos load correctly.

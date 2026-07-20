@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import logoGradient from "../assets/logo-gradient.png";
 import mochiPhoto from "../assets/mochi.jpg";
 import { useActiveSection } from "../context/ActiveSectionContext";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { site } from "../site";
 
 const homeSections = ["services", "about", "contact"] as const;
 
@@ -33,6 +35,12 @@ const aboutPoints = [
 export default function Home() {
   const { setActiveSection } = useActiveSection();
 
+  usePageMeta({
+    title: site.defaultTitle,
+    description: site.defaultDescription,
+    path: "/",
+  });
+
   useEffect(() => {
     const elements = homeSections
       .map((id) => document.getElementById(id))
@@ -56,7 +64,7 @@ export default function Home() {
   }, [setActiveSection]);
 
   return (
-    <main>
+    <main id="main-content">
       <section className="hero">
         <div className="container hero-grid">
           <div>
@@ -84,6 +92,9 @@ export default function Home() {
               className="hero-logo"
               src={logoGradient}
               alt="Mochi Manners logo"
+              width={480}
+              height={479}
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -118,8 +129,9 @@ export default function Home() {
             <h2>About Mochi Manners</h2>
             <p>
               We believe every dog deserves patience, consistency, and a little joy
-              in every session. Our approach is gentle and approachable, with
-              structure underneath — just like the pup who started it all.
+              in every session. Based in Durham, we work with families throughout
+              the RDU area — with an approach that&apos;s gentle and approachable,
+              and structure underneath.
             </p>
             <ul className="about-points">
               {aboutPoints.map((point) => (
@@ -172,8 +184,9 @@ export default function Home() {
               Tell us about your dog and what you&apos;re looking for. We&apos;ll get
               back to you within one business day.
             </p>
-            <a href="mailto:info@mochimanners.com" className="contact-email">
-              info@mochimanners.com
+            <p className="contact-area">Serving {site.serviceArea}.</p>
+            <a href={`mailto:${site.email}`} className="contact-email">
+              {site.email}
             </a>
           </div>
         </div>
