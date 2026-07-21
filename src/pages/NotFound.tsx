@@ -5,7 +5,8 @@ export default function NotFound() {
   usePageMeta({
     title: "Page Not Found | Mochi Manners",
     description: "The page you're looking for doesn't exist.",
-    path: "/404",
+    noindex: true,
+    canonical: false,
   });
 
   return (

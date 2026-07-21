@@ -1,6 +1,6 @@
 # Mochi Manners
 
-A simple landing page for Mochi Manners — dog training, walking, and pet sitting.
+A simple landing page for Mochi Manners — dog training and home visits in Durham, NC.
 
 Built with [Vite](https://vite.dev), React 19, and TypeScript.
 
@@ -57,6 +57,5 @@ Uploaded files in `gallery-upload/` are gitignored; only the manifest in `src/da
 ### Before going live
 
 - Confirm `info@mochimanners.com` is set up and receiving mail.
-- Test social link previews (iMessage, Slack, etc.) after deploy — OG tags point to `https://mochimanners.com/og-image.png`.
-- Review copy in `src/pages/Home.tsx` (services, about points) for accuracy.
+- Test social link previews (iMessage, Slack, etc.) after deploy — OG tags point to `https://www.mochimanners.com/og-image.png`.
 - Visit `/gallery` after upload to confirm images and videos load correctly.

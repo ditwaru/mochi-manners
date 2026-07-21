@@ -5,6 +5,8 @@ type PageMeta = {
   title: string;
   description?: string;
   path?: string;
+  noindex?: boolean;
+  canonical?: string | false;
 };
 
 function setMeta(attr: "name" | "property", key: string, content: string) {
@@ -18,6 +20,10 @@ function setMeta(attr: "name" | "property", key: string, content: string) {
   el.content = content;
 }
 
+function removeMeta(attr: "name" | "property", key: string) {
+  document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)?.remove();
+}
+
 function setCanonical(href: string) {
   let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!el) {
@@ -28,10 +34,18 @@ function setCanonical(href: string) {
   el.href = href;
 }
 
-export function usePageMeta({ title, description, path }: PageMeta) {
+function removeCanonical() {
+  document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.remove();
+}
+
+export function usePageMeta({ title, description, path, noindex, canonical }: PageMeta) {
   useEffect(() => {
     const desc = description ?? site.defaultDescription;
-    const url = path ? `${site.url}${path}` : site.url;
+    const url = noindex
+      ? `${site.url}${window.location.pathname}`
+      : path
+        ? `${site.url}${path}`
+        : site.url;
 
     document.title = title;
     setMeta("name", "description", desc);
@@ -42,6 +56,17 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", desc);
     setMeta("name", "twitter:image", site.ogImage);
-    setCanonical(url);
-  }, [title, description, path]);
+
+    if (noindex) {
+      setMeta("name", "robots", "noindex, nofollow");
+    } else {
+      removeMeta("name", "robots");
+    }
+
+    if (canonical === false) {
+      removeCanonical();
+    } else {
+      setCanonical(typeof canonical === "string" ? canonical : url);
+    }
+  }, [title, description, path, noindex, canonical]);
 }

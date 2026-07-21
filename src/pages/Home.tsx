@@ -11,25 +11,19 @@ const services = [
   {
     title: "Dog Training",
     description:
-      "Positive-reinforcement training tailored to your dog's personality — from basic manners to behavior modification.",
+      "You live with your dog. We don't. We teach you what to do when we're not there — because that's most of the time.",
   },
   {
-    title: "Dog Walking",
+    title: "Home Visits",
     description:
-      "Reliable daily walks with attention to leash manners, socialization, and plenty of sniff time along the way.",
-  },
-  {
-    title: "Pet Sitting",
-    description:
-      "In-home care while you're away — feeding, playtime, and updates so you can travel with peace of mind.",
+      "When you can't be there — at work, out of town, or just stretched thin — we fill the gap with walks and in-home care, keeping your dog exercised, settled, and on track.",
   },
 ];
 
 const aboutPoints = [
-  "Experienced handlers who love what they do",
-  "Force-free, reward-based methods only",
-  "Flexible scheduling for busy pet parents",
-  "Regular photo and progress updates",
+  "Sessions that leave you knowing what to do — not just what we practiced together",
+  "An approach picked for your dog — not a one-size-fits-all method",
+  "Updates when we're caring for your dog — so you're always in the loop",
 ];
 
 export default function Home() {
@@ -68,15 +62,11 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <span className="hero-tag">Dog care you can trust</span>
             <h1>
-              Happy dogs,
-              <br />
-              good <span className="gradient-text">manners.</span>
+              <span className="gradient-text">Manners</span> matter
             </h1>
             <p className="hero-lead">
-              Mochi Manners helps your pup become their best self through patient
-              training, attentive walks, and loving in-home care.
+              Mochi Manners helps your dog become part of your life — not just your house.
             </p>
             <div className="hero-actions">
               <a href="#contact" className="btn btn-primary">
@@ -105,16 +95,13 @@ export default function Home() {
           <div className="section-header">
             <h2>What we offer</h2>
             <p>
-              Whether you need help with a new puppy or a reliable sitter for your
-              next trip, we&apos;ve got you covered.
+              Whether you&apos;re starting from scratch or just need some help along the way,
+              we&apos;ve got you covered.
             </p>
           </div>
           <div className="services-grid">
-            {services.map((service, i) => (
+            {services.map((service) => (
               <article key={service.title} className="service-card">
-                <span className="service-number" aria-hidden="true">
-                  {i + 1}
-                </span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </article>
@@ -128,10 +115,9 @@ export default function Home() {
           <div>
             <h2>About Mochi Manners</h2>
             <p>
-              We believe every dog deserves patience, consistency, and a little joy
-              in every session. Based in Durham, we work with families throughout
-              the RDU area — with an approach that&apos;s gentle and approachable,
-              and structure underneath.
+              Mochi Manners trains you, not your dog. When a guest walks in or you&apos;re heading
+              out the door, we won&apos;t be there — you will. We use what your dog responds to, not
+              one method or trend — so they can come with you, not just behave on session days.
             </p>
             <ul className="about-points">
               {aboutPoints.map((point) => (
@@ -140,11 +126,8 @@ export default function Home() {
             </ul>
           </div>
           <aside className="about-aside">
-            <blockquote>
-              &ldquo;A well-mannered dog isn&apos;t just trained — they&apos;re
-              understood.&rdquo;
-            </blockquote>
-            <cite>— The Mochi Manners philosophy</cite>
+            <blockquote>&ldquo;The scarf is merely a training tool.&rdquo;</blockquote>
+            <cite>— Queen Clarisse, The Princess Diaries</cite>
           </aside>
         </div>
       </section>
@@ -163,14 +146,14 @@ export default function Home() {
           <div className="mochi-content">
             <h2>Meet Mochi</h2>
             <p>
-              Mochi Manners began with one very good girl. Mochi is a Samoyed with
-              a smile that wins over everyone she meets — and a gentle reminder that
-              the best training is patient, positive, and full of joy.
+              Mochi Manners began with one very good girl — a Samoyed we call our princess, and mean
+              it. She has the smile and the white coat, but what actually matters is how she
+              behaves: calm, composed, and easy to have around no matter where we are.
             </p>
             <p>
-              She&apos;s why our name means something: care that&apos;s soft and
-              approachable, with good manners built in over time. Everything we do
-              is inspired by the standard she set.
+              We named the business after her because she proves the point. Princess manners
+              aren&apos;t performative — they&apos;re practical. They&apos;re why she gets to travel
+              with us, and they&apos;re what we help other dogs build toward.
             </p>
           </div>
         </div>
@@ -181,8 +164,8 @@ export default function Home() {
           <div className="contact-box">
             <h2>Ready to get started?</h2>
             <p>
-              Tell us about your dog and what you&apos;re looking for. We&apos;ll get
-              back to you within one business day.
+              Tell us about your dog and what you&apos;re looking for — we&apos;ll be in
+              touch soon.
             </p>
             <p className="contact-area">Serving {site.serviceArea}.</p>
             <a href={`mailto:${site.email}`} className="contact-email">
