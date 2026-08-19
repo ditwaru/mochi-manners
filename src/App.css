@@ -1345,13 +1345,23 @@
   transform: scale(1.06);
 }
 
+.gallery-lightbox-icon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .gallery-lightbox-close {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   z-index: 2;
-  font-size: 1.8rem;
-  line-height: 1;
 }
 
 .gallery-lightbox-nav {
@@ -1359,8 +1369,6 @@
   top: 50%;
   z-index: 2;
   transform: translateY(-50%);
-  font-size: 2rem;
-  line-height: 1;
 }
 
 .gallery-lightbox-nav:hover {

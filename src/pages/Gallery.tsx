@@ -299,7 +299,14 @@ export default function Gallery() {
         {selectedImage && (
           <div className="gallery-lightbox-content">
             <button type="button" className="gallery-lightbox-close" onClick={closeImage}>
-              <span aria-hidden="true">×</span>
+              <svg
+                className="gallery-lightbox-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5" />
+              </svg>
               <span className="sr-only">Close image viewer</span>
             </button>
 
@@ -310,7 +317,14 @@ export default function Gallery() {
                 aria-label="Previous photo"
                 onClick={() => showAdjacentImage(-1)}
               >
-                <span aria-hidden="true">‹</span>
+                <svg
+                  className="gallery-lightbox-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="m15.5 5-7 7 7 7" />
+                </svg>
               </button>
             )}
 
@@ -330,7 +344,14 @@ export default function Gallery() {
                 aria-label="Next photo"
                 onClick={() => showAdjacentImage(1)}
               >
-                <span aria-hidden="true">›</span>
+                <svg
+                  className="gallery-lightbox-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="m8.5 5 7 7-7 7" />
+                </svg>
               </button>
             )}
 
