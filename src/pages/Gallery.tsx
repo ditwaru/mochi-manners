@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { galleryItems, type GalleryImage, type GalleryVideo } from "../data/gallery";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 function imageSrcSet(image: GalleryImage) {
   return image.variants.map((variant) => `${variant.src} ${variant.width}w`).join(", ");
@@ -168,6 +169,8 @@ export default function Gallery() {
   const selectedIndex = images.findIndex((image) => image.id === selectedImageId);
   const selectedImage = selectedIndex >= 0 ? images[selectedIndex] : null;
   const isLightboxOpen = selectedImage !== null;
+
+  useScrollToTop();
 
   usePageMeta({
     title: "Gallery | Mochi Manners",

@@ -1,4 +1,5 @@
 import { usePageMeta } from "../hooks/usePageMeta";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 import { site } from "../site";
 
 const bookingOptions = [
@@ -25,6 +26,8 @@ const profileHighlights = [
 ] as const;
 
 export default function Book() {
+  useScrollToTop();
+
   usePageMeta({
     title: "Book | Mochi Manners",
     description:
