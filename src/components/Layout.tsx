@@ -65,6 +65,13 @@ function LayoutInner() {
             >
               Gallery
             </Link>
+            <Link
+              to="/book"
+              className={location.pathname === "/book" ? "active" : undefined}
+              aria-current={location.pathname === "/book" ? "page" : undefined}
+            >
+              Book
+            </Link>
           </nav>
         </div>
       </header>
@@ -77,6 +84,7 @@ function LayoutInner() {
           <span>© {new Date().getFullYear()} Mochi Manners</span>
           <nav className="footer-nav" aria-label="Footer">
             <Link to="/gallery">Gallery</Link>
+            <Link to="/book">Book</Link>
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </nav>
         </div>

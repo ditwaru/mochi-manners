@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "order": [
+    "puppy-heel-training",
+    "two-dog-walk",
+    "off-leash-heel-training",
+    "field-down-stay",
+    "img-2141",
+    "img-0064",
+    "img-8520",
+    "img-9704",
+    "img-7937",
+    "img-9302",
+    "img-9684",
+    "img-9816",
+    "img-8399",
+    "img-0402",
+    "longboard-exercise",
+    "img-8994",
+    "img-9001",
+    "training-around-chickens",
+    "calm-around-chickens",
+    "off-leash-hiking",
+    "img-9005"
+  ],
+  "videos": [
+    {
+      "id": "puppy-heel-training",
+      "type": "youtube",
+      "videoId": "T32Ncw4C2CA",
+      "title": "Puppy heel training",
+      "caption": "First steps in teaching a puppy to heel",
+      "orientation": "portrait"
+    },
+    {
+      "id": "off-leash-heel-training",
+      "type": "youtube",
+      "videoId": "lw-OUwRHVn4",
+      "title": "Off-leash heel training",
+      "caption": "Practicing off-leash manners in a public setting",
+      "orientation": "portrait"
+    },
+    {
+      "id": "longboard-exercise",
+      "type": "youtube",
+      "videoId": "sx8SOWe-JJ0",
+      "title": "Exercising with the longboard!",
+      "caption": "Doing some laps with Mochi on a longboard!",
+      "orientation": "portrait"
+    },
+    {
+      "id": "training-around-chickens",
+      "type": "youtube",
+      "videoId": "daTWzfgtiMM",
+      "title": "Training around chickens",
+      "caption": "Mochi taking training very seriously while Zeus is having a brain fart",
+      "orientation": "portrait"
+    },
+    {
+      "id": "calm-around-chickens",
+      "type": "youtube",
+      "videoId": "EL-qXYx9hB0",
+      "title": "Staying calm around chickens",
+      "caption": "Practicing being polite and calm around some chickens",
+      "orientation": "portrait"
+    },
+    {
+      "id": "off-leash-hiking",
+      "type": "youtube",
+      "videoId": "N4If-GfHdak",
+      "title": "Off-leash hiking fun!",
+      "caption": "Snow dog in her element having a blast",
+      "orientation": "portrait"
+    }
+  ]
+}

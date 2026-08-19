@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoGradient from "../assets/logo-gradient.png";
 import mochiPhoto from "../assets/mochi.jpg";
 import { useActiveSection } from "../context/ActiveSectionContext";
@@ -14,7 +15,7 @@ const services = [
       "You live with your dog. We don't. We teach you what to do when we're not there — because that's most of the time.",
   },
   {
-    title: "Home Visits",
+    title: "Drop-In Visits",
     description:
       "When you can't be there — at work, out of town, or just stretched thin — we fill the gap with walks and in-home care, keeping your dog exercised, settled, and on track.",
   },
@@ -69,9 +70,9 @@ export default function Home() {
               Mochi Manners helps your dog become part of your life — not just your house.
             </p>
             <div className="hero-actions">
-              <a href="#contact" className="btn btn-primary">
-                Get in touch
-              </a>
+              <Link to="/book" className="btn btn-primary">
+                Book through Rover
+              </Link>
               <a href="#services" className="btn btn-secondary">
                 Our services
               </a>
@@ -164,13 +165,17 @@ export default function Home() {
           <div className="contact-box">
             <h2>Ready to get started?</h2>
             <p>
-              Tell us about your dog and what you&apos;re looking for — we&apos;ll be in
-              touch soon.
+              See current services, availability, and reviews on Rover, then send a booking request.
             </p>
             <p className="contact-area">Serving {site.serviceArea}.</p>
-            <a href={`mailto:${site.email}`} className="contact-email">
-              {site.email}
-            </a>
+            <div className="contact-actions">
+              <Link to="/book" className="contact-email">
+                Book through Rover
+              </Link>
+              <a href={`mailto:${site.email}`} className="contact-question">
+                Have a question? Email us
+              </a>
+            </div>
           </div>
         </div>
       </section>
